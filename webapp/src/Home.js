@@ -9,7 +9,7 @@ class Home extends Component {
    
     return (
       <div >
-        <h2 style={{ display: 'flex', justifyContent: 'center' }}>Welcome to Movie Catelog!</h2>
+        <h2 style={{ display: 'flex', justifyContent: 'center' }}>Welcome to Movie Catalogue!</h2>
         <p style={{ display: 'flex', justifyContent: 'center' }}>
         -You can browse, store, search for movies on here!
         <br/>
@@ -17,7 +17,7 @@ class Home extends Component {
         <br/>
         -Add movies to users library.
         <br/>
-        -Create or delete users in the form.
+        -Create  users in the form.
         
 
         </p>

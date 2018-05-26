@@ -11,6 +11,8 @@ import axios from 'axios';
 import Home from "./Home";
 import Stuff from "./Stuff";
 import User from "./User";
+import Movie from "./Movie";
+import Actor from "./Actor";
 import 'antd/dist/antd.css';
 const { Header, Content, Footer } = Layout;
 
@@ -57,12 +59,14 @@ class App extends Component {
             <Menu
         theme="light"
         mode="horizontal"
-        defaultSelectedKeys={['2']}
-        style={{ lineHeight: '64px' }}
+        
+        style={{ lineHeight: '48px' }}
       >
         <Menu.Item key="1"><li><NavLink to="/">Home</NavLink></li></Menu.Item>
         <Menu.Item key="2"><li><NavLink to="/search">Search</NavLink></li></Menu.Item>
         <Menu.Item key="3"><li><NavLink to="/user">Create User</NavLink></li></Menu.Item>
+        <Menu.Item key="4"><li><NavLink to="/collection">Add Movies to User!</NavLink></li></Menu.Item>
+        <Menu.Item key="5"><li><NavLink to="/actor">Add Movies to Collection!</NavLink></li></Menu.Item>
       </Menu>
             
             
@@ -72,6 +76,8 @@ class App extends Component {
             <Route path="/" component={Home}/>
             <Route path="/search" component={Stuff}/>
             <Route path="/user" component={User}/>
+            <Route path="/collection" component={Movie}/>
+            <Route path="/actor" component={Actor}/>
           </div>
         </div>
       </HashRouter>

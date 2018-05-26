@@ -20,6 +20,7 @@ class Stuff extends Component {
     this.state = {
      
       search_entry: '',
+      search_result: '',
   
     };
     this.handleChangeSearch = this.handleChangeSearch.bind(this);
@@ -34,7 +35,9 @@ class Stuff extends Component {
     console.log(url);
     const new_title = requests.get(url)
   .then(function (response) {
-    alert(response.data);
+   // alert(response.data);
+    this.setState({search_result: response.data});
+    console.log(this.state.search_result);
   }.bind(this))
   .catch(function (error) {
     console.log(error.response);
@@ -43,7 +46,9 @@ class Stuff extends Component {
     
   }
   render() {
-     console.log(this.state.search_entry);
+
+
+
     return (
       <div>
         
@@ -52,6 +57,8 @@ class Stuff extends Component {
             onChange={this.handleChangeSearch} 
             onSearch={this.handleSearch}
             style={{ width: 355}} placeholder="Search by Actor, User, Genre or Movie Title" enterButton/>
+            <br/>
+            {this.state.search_result}
       </div>
     );
   }
