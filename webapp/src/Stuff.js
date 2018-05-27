@@ -46,7 +46,9 @@ class Stuff extends Component {
     
   }
   render() {
-
+    var lst = (this.state.search_result).split("-");
+    var temp = lst
+    var map1 = temp.map(function(val, i ) {return   <div> {val} </div>;});
 
 
     return (
@@ -58,7 +60,8 @@ class Stuff extends Component {
             onSearch={this.handleSearch}
             style={{ width: 355}} placeholder="Search by Actor, User, Genre or Movie Title" enterButton/>
             <br/>
-            {this.state.search_result}
+       
+            {map1}
       </div>
     );
   }

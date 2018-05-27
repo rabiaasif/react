@@ -21,6 +21,8 @@ class Collection extends Component {
      
       
       result: '',
+      result2: '',
+      result3: '',
   
     };
     this.handleSearch = this.handleSearch.bind(this);
@@ -30,7 +32,7 @@ class Collection extends Component {
    handleSearch() {
      let url = 'user_movie' 
     console.log(url);
-    const new_title = requests.get(url)
+    const user_movie = requests.get(url)
   .then(function (response) {
    // alert(response.data);
     this.setState({result: response.data});
@@ -40,17 +42,62 @@ class Collection extends Component {
     console.log(error.response);
   
   });
-    
+
+    let url2 = 'movie_genre'
+    const movie_genre = requests.get(url2)
+  .then(function (response) {
+   // alert(response.data);
+    this.setState({result2: response.data});
+    console.log(response.data);
+  }.bind(this))
+  .catch(function (error) {
+    console.log(error.response);
+  });
+   let url3 = 'movie_actor'
+    const movie_actor = requests.get(url3)
+  .then(function (response) {
+   // alert(response.data);
+    this.setState({result3: response.data});
+    console.log(response.data);
+  }.bind(this))
+  .catch(function (error) {
+    console.log(error.response);
+  });
   }
   render() {
     this.handleSearch()
+    var lst = (this.state.result).split("-");
+    var temp = lst
+    var map1 = temp.map(function(val, i ) {return   <div> {val} </div>;});
+
+
+    var lst2 = (this.state.result2).split("-");
+    var temp2 = lst2
+    var map2 = temp2.map(function(val, i ) {return   <div> {val} </div>;});
+
+    var lst3 = (this.state.result3).split("-");
+    var temp3 = lst3
+    var map3 = temp3.map(function(val, i ) {return   <div> {val} </div>;});
+
+
+    
+ 
+
 
 
 
     return (
       <div>
-        
-            {this.state.result}
+          <p>user: movie collection database </p>
+            {map1}
+            <br/>
+           
+            <br/>
+            <p>movie collection: genre database</p>
+            {map2}
+            <br/>
+            <p>actor: movie  database</p>
+            {map3}
       </div>
     );
   }
