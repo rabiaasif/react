@@ -13,30 +13,25 @@ const requests = {
     })
 };
 
- 
 class Collection extends Component {
     constructor(props) {
     super(props);
     this.state = {
-     
-      
       result: '',
       result2: '',
       result3: '',
   
     };
-    this.handleSearch = this.handleSearch.bind(this);
-   
+    this.handleResults = this.handleResults.bind(this);
     };
      
-   handleSearch() {
+   handleResults() {
      let url = 'user_movie' 
-    console.log(url);
     const user_movie = requests.get(url)
   .then(function (response) {
    // alert(response.data);
     this.setState({result: response.data});
-    console.log(response.data);
+  
   }.bind(this))
   .catch(function (error) {
     console.log(error.response);
@@ -48,7 +43,7 @@ class Collection extends Component {
   .then(function (response) {
    // alert(response.data);
     this.setState({result2: response.data});
-    console.log(response.data);
+ 
   }.bind(this))
   .catch(function (error) {
     console.log(error.response);
@@ -65,33 +60,25 @@ class Collection extends Component {
   });
   }
   render() {
-    this.handleSearch()
+    this.handleResults()
     var lst = (this.state.result).split("-");
-    var temp = lst
+    var temp = lst;
     var map1 = temp.map(function(val, i ) {return   <div> {val} </div>;});
 
 
     var lst2 = (this.state.result2).split("-");
-    var temp2 = lst2
+    var temp2 = lst2;
     var map2 = temp2.map(function(val, i ) {return   <div> {val} </div>;});
 
     var lst3 = (this.state.result3).split("-");
-    var temp3 = lst3
+    var temp3 = lst3;
     var map3 = temp3.map(function(val, i ) {return   <div> {val} </div>;});
-
-
-    
- 
-
-
 
 
     return (
       <div>
           <p>user: movie collection database </p>
             {map1}
-            <br/>
-           
             <br/>
             <p>movie collection: genre database</p>
             {map2}

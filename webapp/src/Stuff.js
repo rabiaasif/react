@@ -32,12 +32,12 @@ class Stuff extends Component {
   }
    handleSearch(event) {
      let url = 'search/' + this.state.search_entry;
-    console.log(url);
+ 
     const new_title = requests.get(url)
   .then(function (response) {
    // alert(response.data);
     this.setState({search_result: response.data});
-    console.log(this.state.search_result);
+
   }.bind(this))
   .catch(function (error) {
     console.log(error.response);
@@ -60,7 +60,6 @@ class Stuff extends Component {
             onSearch={this.handleSearch}
             style={{ width: 355}} placeholder="Search by Actor, User, Genre or Movie Title" enterButton/>
             <br/>
-       
             {map1}
       </div>
     );

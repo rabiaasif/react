@@ -49,10 +49,11 @@ class Movie extends Component {
 
    handleButtonClick(event) {
     let url = "add"+"/"+ this.state.userName +"/" + this.state.genre + "/" + this.state.actor + "/" + this.state.movie;
-    console.log(url);
+
     const new_title = requests.get(url)
   .then(function (response) {
     alert(response.data);
+    console.log(response.data);
   }.bind(this))
   .catch(function (error) {
     console.log(error.response);
@@ -62,11 +63,7 @@ class Movie extends Component {
   }
 
   render() {
-    console.log(this.state.userName);
-    console.log(this.state.genre);
-    console.log(this.state.actor);
-    console.log(this.state.movie);
-  
+   
     return (
       <div>
       <p>Please fill out all fields!</p>

@@ -43,7 +43,7 @@ class Delete extends Component {
 
    handleButtonClick(event) {
     let url = "delete" +"/" +this.state.movie +  "/" + this.state.userName ;
-    console.log(url);
+  
     const new_title = requests.get(url)
   .then(function (response) {
     alert(response.data);
@@ -56,18 +56,9 @@ class Delete extends Component {
   }
 
   render() {
-
-    console.log(this.state.genre);
-    console.log(this.state.actor);
-    console.log(this.state.movie);
-  
     return (
       <div>
       <p>Please fill out all fields!</p>
- 
-     
-
-
         <Input style={{ width: 355}}
         placeholder="movie title"
         prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} 
@@ -83,15 +74,9 @@ class Delete extends Component {
         onChange={this.handleChangeUser}/>
 
         <br/>
-
-
-      
-        
         <div>
         <Button value ="Submit"  onClick = {this.handleButtonClick} >Submit</Button>
         </div>
-  
-      
        </div>
          
     );

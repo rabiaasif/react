@@ -33,7 +33,7 @@ class User extends Component {
   }
    handleButtonClick(event) {
     let url = this.state.userName;
-    console.log(url);
+  
     const new_title = requests.get(url)
   .then(function (response) {
     alert(response.data);
@@ -46,7 +46,7 @@ class User extends Component {
   }
 
   render() {
-    console.log(this.state.userName);
+    
   
     return (
       <div>

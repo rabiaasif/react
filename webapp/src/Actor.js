@@ -58,18 +58,9 @@ class Actor extends Component {
   }
 
   render() {
-
-    console.log(this.state.genre);
-    console.log(this.state.actor);
-    console.log(this.state.movie);
-  
     return (
       <div>
       <p>Please fill out all fields!</p>
- 
-     
-
-
         <Input style={{ width: 355}}
         placeholder="movie title"
         prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} 
