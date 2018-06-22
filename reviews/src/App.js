@@ -5,10 +5,12 @@ import './index.css';
 
 class App extends Component {
  componentDidMount() {
+        let place = {lat: -25.344, lng: 131.036};
         let map = new window.google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
+          center: place,
           zoom: 8
         });
+        let marker = new window.google.maps.Marker({position: place, map: map});
       }
   render() {
     return (
