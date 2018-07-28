@@ -1,5 +1,5 @@
 {
-  "name": "reviews",
+  "name": "chathot",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,5 +13,21 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/github.com/rabiaasif.git"
+  },
+  "keywords": [
+    "chatbot"
+  ],
+  "author": "Rabia",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/github.com/rabiaasif/issues"
+  },
+  "homepage": "https://github.com/github.com/rabiaasif#readme"
 }
